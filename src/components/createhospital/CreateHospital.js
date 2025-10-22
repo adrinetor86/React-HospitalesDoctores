@@ -1,11 +1,13 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import Global from '../Global';
+import {Navigate} from "react-router-dom";
 
 class CreateHospital extends Component {
 
     state={
-        mensaje:""
+        mensaje:"",
+        status:false
     }
     url=Global.apiHospitales;
 
@@ -35,13 +37,20 @@ class CreateHospital extends Component {
         axios.post(this.url+request,hospital).then(response => {
             this.setState({
                 mensaje:"HOSPITAL insertado"+ hospital.nombre,
+                status:true
             });
+
             console.log("---HOSPITAL CREADO---");
         })
     }
     render() {
         return (
             <div className="min-vh-100 d-flex justify-content-center align-items-center bg-light bg-gradient">
+                {
+                    this.state.status === true &&
+                    <Navigate to="/hospitales"/>
+                }
+
                 <div className="card shadow-lg p-4" style={{maxWidth: '420px', width: '100%'}}>
                     <h1 className="text-center mb-4 text-primary fw-bold">Crear Hospital</h1>
                     <h3 className="text-center" style={{color:"#0d6efd"}}>

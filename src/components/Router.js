@@ -7,6 +7,8 @@ import Footer from "./footer/Footer";
 import Doctores from "./doctores/Doctores";
 import DetallesDoctor from "./detallesdoctor/DetallesDoctor";
 import CreateHospital from "./createhospital/CreateHospital";
+import Hospitales from "./hospitales/Hospitales";
+import EditHospital from "./edithospital/EditHospital";
 
 class Router extends Component {
 
@@ -23,7 +25,11 @@ class Router extends Component {
 
             return(<DetallesDoctor iddoctor={iddoctor}/>)
         }
+        function EditHospitalElement(){
+            let{idhospital}=useParams()
 
+            return(<EditHospital idhospital={idhospital}/>)
+        }
         return (
             <BrowserRouter>
                 <MenuHospitales/>
@@ -33,6 +39,8 @@ class Router extends Component {
                     <Route path="/doctores/:idhospital" element={<DoctoresElement/>}/>
                     <Route path="/detalles/:iddoctor" element={<DetallesElement/>}/>
                     <Route path="/create" element={<CreateHospital/>}/>
+                    <Route path="/hospitales" element={<Hospitales/>}/>
+                    <Route path="/edithospital/:idhospital" element={<EditHospitalElement/>}/>
                     <Route path="*" element={<NotFound/>} />
                 </Routes>
                 <Footer/>

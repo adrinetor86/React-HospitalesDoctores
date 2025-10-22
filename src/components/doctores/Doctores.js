@@ -79,6 +79,7 @@ class Doctores extends Component {
                                     <th className="text-center">Especialidad</th>
                                     <th className="text-center">Salario</th>
                                     <th className="text-center"></th>
+                                    <th className="text-center"></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -92,12 +93,15 @@ class Doctores extends Component {
                                             <td className="text-center">
                                                 {/*EL PRIMER BOTON CARGA LOS DATOS EN LA MISMA PAGINA*/}
                                                 <button onClick={ ()=>{this.cargarMedico(doctor.idDoctor)}}>Ver detalles aqui</button>
+
                                                 <button className="btn btn-info shadow rounded px-3 mx-auto py-1 d-flex align-items-center gap-2">
                                                     <NavLink to={"/detalles/"+doctor.idDoctor} className="text-white text-decoration-none w-100 h-100">
                                                         Ver Detalles
                                                     </NavLink>
-
                                                 </button>
+                                            </td>
+                                            <td className="text-center">
+                                                <button>Ver datos Hospital</button>
                                             </td>
                                         </tr>
                                     )

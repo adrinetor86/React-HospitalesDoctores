@@ -71,7 +71,7 @@ class DetallesDoctor extends Component {
 
                             <button className="btn btn-info shadow rounded px-3 mx-auto py-1 d-flex align-items-center gap-2">
                                 <NavLink to={"/doctores/"+this.state.doctor.idHospital} className="text-white text-decoration-none w-100 h-100">
-                                    Volver A los medicos
+                                    Volver a los medicos
                                 </NavLink>
                             </button>
 
